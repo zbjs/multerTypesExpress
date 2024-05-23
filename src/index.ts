@@ -1,7 +1,7 @@
 import app from "./app";
 // import db from "./config/dbUrl";
 import "dotenv/config";
-import "routes/routes";
+import routes from "@/routes";
 import mongoose from "mongoose";
 
 app;
@@ -15,6 +15,8 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
+app.use("/", routes);
 
 // error handling middleware
 
